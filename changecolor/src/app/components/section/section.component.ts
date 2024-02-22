@@ -1,6 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Section } from './section.model';
-
 
 @Component({
   selector: 'app-section',
@@ -8,11 +6,13 @@ import { Section } from './section.model';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent {
-  @Input() section!: Section;
-  @Input() isActive: boolean = false;
-  @Output() clickEvent = new EventEmitter<string>();
+  @Input() section: any;
+  @Input()
+  selected: boolean = false;
+  @Output() select = new EventEmitter<any>();
 
-  emitClickEvent() {
-    this.clickEvent.emit(this.section.color);
+  onClick() {
+    this.select.emit(this.section);
   }
 }
+

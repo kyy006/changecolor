@@ -1,8 +1,0 @@
-<h1 [style.color]="activeColor">{{ title }}</h1>
-<div *ngFor="let section of sections">
-  <app-section
-    [section]="section"
-    [isActive]="activeColor === section.color"
-    (clickEvent)="changeColor(section.color)"
-  ></app-section>
-</div>

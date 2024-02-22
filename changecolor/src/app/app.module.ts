@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SectionComponent } from './section/section.component'; // Ensure this import is correct
+import { SectionComponent } from './components/section/section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SectionComponent // SectionComponent must be declared here
+    SectionComponent
   ],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
